@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Users</title>
+</head>
+<body>
+<h1>List of Users</h1>
+{% for i in a %}
+    <a href = "/info/{{i['id']}}"> {{i['name']}} {{i['surname']}} <br> </a>
+{% endfor %}
+<br>
+<a href='/'>Go back to the previous page</a>
+<br>
+<form action="http://127.0.0.1:5000/add_user" method="post">
+    <p>
+      <label for="name">Name:</label>
+      <input type="text" name="name">
+    </p>
+    <p>
+      <label for="surname">Surname:</label>
+      <input type="text" name="surname">
+    </p>
+    <p>
+      <label for="age">Age:</label>
+      <input type="number" name="age">
+    </p>
+    <p>
+        <button name="enter">Ввести</button>
+    </p>
+</form>
+</body>
+</html>
